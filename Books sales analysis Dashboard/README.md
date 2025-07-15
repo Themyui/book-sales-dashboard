@@ -41,24 +41,12 @@ Extracted fields:
 ## 📸 Screenshots
 
 ### 🧭 Full Dashboard View
-![Dashboard Overview](screenshots/dashboard_overview.png)
-
+![Dashboard Overview](image/dashboard1.png)
+![KPI Cards](image/dashboard2.png)
 ---
 
-### 🎯 KPI Cards + Slicers
-![KPI Cards](assets/screenshots/kpi_cards.png)
-
----
-
-### 🔍 Book Lookup Panel
-![Book Lookup](assets/screenshots/book_lookup.png)
-
----
-
-### 📈 Monthly Sales Chart
-![Sales Trend](assets/screenshots/monthly_sales.png)
-
----
+### 🎯 pivote table
+![KPI Cards](image/pivote.png)
 
 ## 📊 Excel Dashboard Features
 
@@ -150,9 +138,9 @@ python scripts/scraper.py
 
 Feel free to connect or ask questions!
 
-- 💼 [Your LinkedIn]  
-- 📧 your.email@example.com
+- 💼 https://www.linkedin.com/in/themyui-ningshen-1021b6268/  
+- 📧 themyuiningshen2000themyui@gmail.com
 
 ---
 
-> Built with 💻 Python + 📊 Excel by [Your Name]
+> Built with 💻 Python + 📊 Excel by Themyui Ningshen
