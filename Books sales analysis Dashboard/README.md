@@ -1,119 +1,158 @@
-# 📚 Book Sales Analysis Dashboard
+# 📚 Book Sales Dashboard – Web Scraping + Excel Analytics
 
-A full end-to-end **Data Analytics Project** that scrapes product data from an e-commerce site, cleans and transforms it in Excel, and builds a professional interactive dashboard for business insights.
+📊 A full-stack data project: Web scraping book data from an e-commerce site using Python, transforming it in Excel, and building a dynamic, interactive sales dashboard with advanced charts, KPIs, slicers, and formulas.
 
 ---
 
-## 📦 Project Overview
+## 📦 Repository Info
 
-| Phase | Description |
-|-------|-------------|
-| 🕸️ Web Scraping | Scraped detailed book data from [books.toscrape.com](http://books.toscrape.com) using Python & BeautifulSoup |
-| 📊 Data Cleaning | Processed and transformed the raw dataset in Excel |
-| 📈 Dashboard | Built an interactive Excel dashboard using PivotTables, charts, slicers, and formulas |
+**Repo Name:** `book-sales-dashboard`  
+**Description:**  
+📚 A full data analytics project: Web scraping book data using Python, transforming it in Excel, and building an interactive sales dashboard with PivotTables, slicers, charts, and formulas.
 
 ---
 
 ## 🧰 Tools & Technologies
 
-- **Python 3.11** (for web scraping)
-  - `requests`, `BeautifulSoup4`, `pandas`
-- **Microsoft Excel 365**
-  - Data tables, helper columns, advanced formulas (XLOOKUP, TEXT, VALUE, IFERROR)
-  - PivotTables, PivotCharts
-  - Slicers, Drop-down lists, Navigation buttons
+| Phase            | Tools Used                        |
+|------------------|-----------------------------------|
+| Web Scraping     | Python, BeautifulSoup, Requests   |
+| Data Storage     | Excel (.xlsx)                     |
+| Data Cleaning    | Excel formulas (TEXT, VALUE, etc.)|
+| Dashboard        | Excel PivotTables, Charts, Slicers|
+| Optional         | Pandas (for preprocessing)        |
 
 ---
 
-## 🔍 Web Scraping Details
+## 🕸️ Web Scraping Summary
 
-Scraped ~1000+ books with the following attributes:
+Scraped data from: [books.toscrape.com](http://books.toscrape.com)
 
-| Column | Description |
-|--------|-------------|
-| Title | Book title |
-| Price | Price in GBP |
-| Availability | Stock count (parsed from text like `In stock (19 available)`) |
-| Category | Genre/category of the book |
-| Rating | Star rating (converted to numeric) |
-| Product URL | Link to book detail page |
-| Description | (Optional) Book summary (from detail page) |
+Extracted fields:
 
-Python script saved final data into:
+- 📖 Title  
+- 💰 Price (GBP)  
+- ⭐ Rating (converted to numeric)  
+- 📦 Availability (stock count extracted)  
+- 🧾 Category  
+- 🔗 Product URL  
+- 📄 Description (optional from detail page)
 
-- `books_detailed_data.xlsx`
+## 📸 Screenshots
 
----
-
-## 📊 Excel Dashboard Highlights
-
-| Feature | Description |
-|--------|-------------|
-| ✅ KPI Cards | Total Revenue, Avg Rating, Total Books, Low Stock Count |
-| 📈 Sales Trend | Monthly revenue using `Last Purchase Date` |
-| 📚 Top Rated Books | Bar chart of books with rating ≥ 4.5 |
-| 💰 Top Sellers | Top 10 books by total sales |
-| 📦 Low Stock Alert | Table for books with stock < 5 |
-| 🔍 Book Lookup | Dropdown + XLOOKUP to display book info |
-| 🎛️ Slicers | Interactive filters for category, stock, buyer type |
+### 🧭 Full Dashboard View
+![Dashboard Overview](screenshots/dashboard_overview.png)
 
 ---
 
-## 📁 Folder Structure
+### 🎯 KPI Cards + Slicers
+![KPI Cards](assets/screenshots/kpi_cards.png)
 
-```bash
-📦 book-sales-dashboard/
-├── 📁 data/
-│   └── books_detailed_data.xlsx     # Cleaned data file
-├── 📁 scripts/
-│   └── scraper.py                   # Python script for scraping
-├── 📁 dashboard/
-│   └── Book_Sales_Dashboard.xlsx    # Final Excel dashboard
+---
+
+### 🔍 Book Lookup Panel
+![Book Lookup](assets/screenshots/book_lookup.png)
+
+---
+
+### 📈 Monthly Sales Chart
+![Sales Trend](assets/screenshots/monthly_sales.png)
+
+---
+
+## 📊 Excel Dashboard Features
+
+| Feature               | Description                               |
+|------------------------|-------------------------------------------|
+| 💰 Total Revenue        | KPI using SUM                             |
+| 📚 Total Books          | KPI using COUNTA                          |
+| ⭐ Avg Rating            | KPI using AVERAGE                         |
+| ⚠️ Low Stock Alert       | COUNTIF + Table for stock < 5             |
+| 📈 Monthly Sales Trend  | Line chart based on Last Purchase Date   |
+| 🥇 Top Rated Books      | Bar chart (Rating ≥ 4.5)                  |
+| 🔝 Top Sellers          | Pivot sorted by Total Sales               |
+| 📘 Book Lookup          | Dropdown + XLOOKUP panel                  |
+| 🎛 Slicers              | Filter dashboard by Category, Buyer Type |
+
+---
+
+## 📁 Project Structure
+
+```
+book-sales-dashboard/
+├── data/
+│   └── books_detailed_data.xlsx
+├── scripts/
+│   └── scraper.py
+├── dashboard/
+│   └── Book_Sales_Dashboard.xlsx
 └── README.md
-🚀 How to Use
-Step 1: Scrape Data
-bash
-Copy code
+```
+
+---
+
+## 🧠 Key Excel Techniques Used
+
+- `TEXT()` → Extract month from date  
+- `XLOOKUP()` → Dynamic Book Info Panel  
+- `VALUE()` + `SUBSTITUTE()` → Clean price fields  
+- `IFERROR()` → Avoid formula errors  
+- `PivotTables` → For summaries  
+- `PivotCharts` → For visuals  
+- `Slicers` + `Dropdowns` → For filtering  
+- `Hyperlinks` → For sheet navigation  
+
+---
+
+## 🚀 How to Use
+
+### Step 1: Scrape Data
+Run the Python script to scrape book data:
+```
 python scripts/scraper.py
-Step 2: Open Excel
-Open Book_Sales_Dashboard.xlsx
+```
 
-Explore KPI cards, use slicers, try Book Lookup
+### Step 2: Analyze in Excel
+- Open `dashboard/Book_Sales_Dashboard.xlsx`
+- Use slicers, lookup tools, and filters to explore insights
 
-Filter by category to dynamically update charts
+---
 
-📌 Key Excel Techniques Used
-TEXT() to extract month from date
+## ✨ Sample Use Cases
 
-XLOOKUP() for Book Info panel
+- Track top-selling genres and books  
+- Identify understocked or overperforming products  
+- Monitor monthly revenue trends  
+- Look up product metrics instantly  
+- Present business insights to stakeholders
 
-IF(), VALUE(), SUBSTITUTE() for cleaning
+---
 
-PivotTables, PivotCharts
+## 📌 Learnings & Takeaways
 
-Slicers, Data Validation dropdowns
+- Web scraping with BeautifulSoup  
+- Feature engineering from messy HTML  
+- Data visualization with Excel  
+- Business intelligence techniques  
+- Excel dashboarding for real-world use
 
-Navigation via hyperlinks and buttons
+---
 
-📎 Bonus
-Export-ready: Can be saved as PDF for reports
+## 📎 Bonus Tips
 
-Portfolio-grade project for interviews and case studies
+- Use slicers to filter charts by category or rating  
+- Export to PDF for reports or presentations  
+- Upload to GitHub or LinkedIn as a portfolio project  
 
-🧠 Learnings
-Hands-on scraping and parsing HTML
+---
 
-Real-world Excel dashboard building
+## 📞 Contact
 
-Data cleaning & feature engineering logic
+Feel free to connect or ask questions!
 
-Business storytelling using charts
+- 💼 [Your LinkedIn]  
+- 📧 your.email@example.com
 
-📞 Contact
-Feel free to connect:
+---
 
-💼 LinkedIn
-
-📧 your.email@example.com
-
-Built with 💻 Python + 📊 Excel by [Your Name]
+> Built with 💻 Python + 📊 Excel by [Your Name]
